@@ -20,7 +20,7 @@ public struct calculator {
         for tmp in a {
             let tm1:String = String(tmp);
     
-            if(Int(tm1) ?? -1 >= 0 && Int(tm1) ?? -1 <= 9){
+            if(Int(tm1) ?? -1 >= 0 && Int(tm1) ?? -1 <= 9 || tm1 == "."){
     
                 number += tm1;
             }
@@ -44,7 +44,7 @@ public struct calculator {
         var tezt:String = "";
         var arrcompact = [String]();
         for i in a {
-            if(Int(i) ?? -1 >= 0){
+            if(Double(i) ?? -1 >= 0){
     
                 if(tezt != ""){
                     arrcompact.append(tezt);
@@ -120,7 +120,7 @@ public struct calculator {
         var stack = Stack<Any>();
         var queue = Queue<Any>();
         for i in a.indices {
-            if (Int(a[i]) ?? -1 >= 0){
+            if (Double(a[i]) ?? -1 >= 0){
                 queue.enqueue(a[i]);
             }
             else{
@@ -243,6 +243,7 @@ public struct calculator {
         return String(kq1);
     }
     mutating func createarr(){
+    
         var arrstr1 = truythamso(a: self.str);
         print(arrstr1)
         arrstr1 = CompactData(a: arrstr1);
